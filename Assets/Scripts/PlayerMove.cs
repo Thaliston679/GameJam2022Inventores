@@ -79,8 +79,6 @@ public class PlayerMove : MonoBehaviour
             player.velocity = new Vector2(player.velocity.x,0);
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
             doubleJump = false;
-
-            Debug.Log("Double Jump");
         }
 
         if (Input.GetButtonUp("Jump"))
