@@ -87,6 +87,15 @@ public class PlayerMove : MonoBehaviour
         {
             PlayerJumpCut();
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            vision3dColor = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            vision3dColor = 2;
+        }
     }
 
     void PlayerJumpCut()
@@ -211,8 +220,8 @@ public class PlayerMove : MonoBehaviour
         return vision3dColor;
     }
 
-    //Para plataforma azul aparente     0.2 0.4 1 1
-    //Para plataforma azul escondida    0.2 0.4 1 0.2
-    //Para plataforma vermelha aparente     1 0.2 0.2 1
-    //Para plataforma vermelha escondida    1 0.2 0.2 0.2
+    //Para plataforma azul aparente     0.2f, 0.4f, 1, 1
+    //Para plataforma azul escondida    0.2f, 0.4f, 1, 0.2f
+    //Para plataforma vermelha aparente     1, 0.2f, 0.2f, 1
+    //Para plataforma vermelha escondida    1, 0.2f, 0.2f, 0.2f
 }
