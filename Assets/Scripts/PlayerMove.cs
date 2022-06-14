@@ -174,4 +174,13 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public int GetVision3dColor()
+    {
+        return vision3dColor;
+    }
+
+    //Para plataforma azul aparente     0.2 0.4 1 1
+    //Para plataforma azul escondida    0.2 0.4 1 0.2
+    //Para plataforma vermelha aparente     1 0.2 0.2 1
+    //Para plataforma vermelha escondida    1 0.2 0.2 0.2
 }
