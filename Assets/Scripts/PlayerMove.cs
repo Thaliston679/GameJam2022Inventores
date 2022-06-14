@@ -218,6 +218,7 @@ public class PlayerMove : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         isGrounded = true;
+        isJumping = false;
         if (collision.gameObject.CompareTag("Ground"))
         {
             anim.SetBool("jump", false);
