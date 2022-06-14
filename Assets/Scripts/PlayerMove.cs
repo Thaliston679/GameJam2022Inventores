@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce = 5f;
     private bool isJumping = false;
     private float jumpCut = 0.25f; //(0 - 0.5f)
+    public SpriteRenderer imagem;
 
     private bool doubleJump = false;
 
@@ -29,7 +31,8 @@ public class PlayerMove : MonoBehaviour
     private float moveInput;
 
     void Start()
-    {
+    { 
+        imagem = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -104,11 +107,11 @@ public class PlayerMove : MonoBehaviour
         direction = Input.GetAxisRaw("Horizontal");
         if(direction > 0)
         {
-            player.transform.localScale = new Vector3(player.transform.localScale.x, player.transform.localScale.y, player.transform.localScale.z);
+            imagem.flipX = false;
         }
         else if (direction < 0)
         {
-            player.transform.localScale = new Vector3(player.transform.localScale.x * -1, player.transform.localScale.y, player.transform.localScale.z);
+            imagem.flipX =true;
         }
     }
 
@@ -121,6 +124,16 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    void Morrer()
+    {
+        Reiniciar();
+    }
+
+    void Reiniciar()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -129,12 +142,27 @@ public class PlayerMove : MonoBehaviour
             isGrounded = true;
             isJumping = false;
             doubleJump = true;
+        }     
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            playerHp = 0;
+        }
+
+        if (playerHp <= 0)
+        {
+            Morrer();
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         isGrounded = true;
+
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
