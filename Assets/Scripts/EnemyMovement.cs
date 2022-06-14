@@ -25,10 +25,12 @@ public class EnemyMovement : MonoBehaviour
         if (movingRight) //Move a plataforma para direita
         {
             inimigo.transform.position = new Vector2(inimigo.transform.position.x + velPlat * Time.deltaTime, inimigo.transform.position.y);
+            inimigo.transform.localScale = new Vector3(1, 1, 1);
         }
         else //Move a plataforma para esquerda
         {
             inimigo.transform.position = new Vector2(inimigo.transform.position.x - velPlat * Time.deltaTime, inimigo.transform.position.y);
+            inimigo.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }
