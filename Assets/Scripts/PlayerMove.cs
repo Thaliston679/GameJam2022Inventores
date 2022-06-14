@@ -241,6 +241,11 @@ public class PlayerMove : MonoBehaviour
         return vision3dColor;
     }
 
+    public bool GetFlipX()
+    {
+        return imagem.flipX;
+    }
+
     //Para plataforma azul aparente     0.2f, 0.4f, 1, 1
     //Para plataforma azul escondida    0.2f, 0.4f, 1, 0.2f
     //Para plataforma vermelha aparente     1, 0.2f, 0.2f, 1
