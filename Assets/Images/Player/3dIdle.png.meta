@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: b54e1364169dd3f46923bcbf685251b4
+guid: f0cef530d5479cc428c79bf316d7496e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 406887491037054099
-    second: SimpleRun_0
+      213: 2040209235282913536
+    second: 3dIdle_0
   - first:
-      213: 6070463029639978744
-    second: SimpleRun_1
+      213: -1039016848120926070
+    second: 3dIdle_1
   - first:
-      213: 8261746881596585702
-    second: SimpleRun_2
-  - first:
-      213: 4408080739350581368
-    second: SimpleRun_3
+      213: -8326439506360215300
+    second: 3dIdle_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SimpleRun_0
+      name: 3dIdle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39440de640e85a500800000000000000
-      internalID: 406887491037054099
+      spriteID: 00962807d77405c10800000000000000
+      internalID: 2040209235282913536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SimpleRun_1
+      name: 3dIdle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -174,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fe15d776fd9e3450800000000000000
-      internalID: 6070463029639978744
+      spriteID: a803b1c7eaba491f0800000000000000
+      internalID: -1039016848120926070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SimpleRun_2
+      name: 3dIdle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -195,29 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e671c5240f97a270800000000000000
-      internalID: 8261746881596585702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SimpleRun_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8709b32d316ac2d30800000000000000
-      internalID: 4408080739350581368
+      spriteID: cf8de93626b827c80800000000000000
+      internalID: -8326439506360215300
       vertices: []
       indices: 
       edges: []

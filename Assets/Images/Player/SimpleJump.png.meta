@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: b54e1364169dd3f46923bcbf685251b4
+guid: ddfebbe255f25c742ac4c395c81e8c35
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 406887491037054099
-    second: SimpleRun_0
+      213: 6469102914772105559
+    second: SimpleJump_0
   - first:
-      213: 6070463029639978744
-    second: SimpleRun_1
+      213: -8412472449573017162
+    second: SimpleJump_1
   - first:
-      213: 8261746881596585702
-    second: SimpleRun_2
+      213: -7656941992560777733
+    second: SimpleJump_2
   - first:
-      213: 4408080739350581368
-    second: SimpleRun_3
+      213: 138380573926048536
+    second: SimpleJump_3
+  - first:
+      213: 8342454414227779284
+    second: SimpleJump_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,85 +142,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SimpleRun_0
+      name: SimpleJump_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39440de640e85a500800000000000000
-      internalID: 406887491037054099
+      spriteID: 7597f6283ded6c950800000000000000
+      internalID: 6469102914772105559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SimpleRun_1
+      name: SimpleJump_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fe15d776fd9e3450800000000000000
-      internalID: 6070463029639978744
+      spriteID: 6b9a078d0e4e04b80800000000000000
+      internalID: -8412472449573017162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SimpleRun_2
+      name: SimpleJump_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e671c5240f97a270800000000000000
-      internalID: 8261746881596585702
+      spriteID: bf5a4a373d31db590800000000000000
+      internalID: -7656941992560777733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SimpleRun_3
+      name: SimpleJump_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8709b32d316ac2d30800000000000000
-      internalID: 4408080739350581368
+      spriteID: 8134da81660abe100800000000000000
+      internalID: 138380573926048536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimpleJump_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4deafeae61a56c370800000000000000
+      internalID: 8342454414227779284
       vertices: []
       indices: 
       edges: []
