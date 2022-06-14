@@ -10,6 +10,8 @@ public class PlayerMove : MonoBehaviour
     private bool isJumping = false;
     private float jumpCut = 0.25f; //(0 - 0.5f)
 
+    private bool doubleJump = false;
+
     private bool isGrounded = false;
 
     private float direction = 1;
@@ -69,6 +71,15 @@ public class PlayerMove : MonoBehaviour
             isJumping = true;
         }
 
+        if (Input.GetButtonDown("Jump") && !isGrounded && doubleJump && isJumping && coyoteTimer <= 0)
+        {
+            player.velocity = new Vector2(player.velocity.x,0);
+            player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
+            doubleJump = false;
+
+            Debug.Log("Double Jump");
+        }
+
         if (Input.GetButtonUp("Jump"))
         {
             PlayerJumpCut();
@@ -114,17 +125,23 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Tocou o chão");
+            //Debug.Log("Tocou o chão");
             isGrounded = true;
             isJumping = false;
+            doubleJump = true;
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        isGrounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Saiu do chão");
+            //Debug.Log("Saiu do chão");
             isGrounded = false;
         }
     }
