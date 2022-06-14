@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class GameManagerController : MonoBehaviour
 {
-    void Update()
-    {
-        
-    }
-
     public static void PauseGame()
     {
         if(Time.timeScale == 0)
@@ -17,7 +12,7 @@ public class GameManagerController : MonoBehaviour
         }
         else if(Time.timeScale == 1)
         {
-            Time.timeScale =     0;
+            Time.timeScale = 0;
         }
     }
 }
