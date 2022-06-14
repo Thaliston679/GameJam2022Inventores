@@ -11,6 +11,10 @@ public class PlayerMove : MonoBehaviour
     private bool isJumping = false;
     private float jumpCut = 0.25f; //(0 - 0.5f)
     public SpriteRenderer imagem;
+    private Animator anim;
+
+    //meu index atual
+    
 
     private bool doubleJump = false;
 
@@ -32,6 +36,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     { 
+        anim = GetComponent<Animator>();
         imagem = GetComponent<SpriteRenderer>();
     }
 
@@ -72,6 +77,7 @@ public class PlayerMove : MonoBehaviour
         {
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
             isJumping = true;
+            anim.SetBool("jump",true);
         }
 
         if (Input.GetButtonDown("Jump") && !isGrounded && doubleJump && isJumping && coyoteTimer <= 0)
@@ -79,8 +85,7 @@ public class PlayerMove : MonoBehaviour
             player.velocity = new Vector2(player.velocity.x,0);
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
             doubleJump = false;
-
-            Debug.Log("Double Jump");
+            anim.SetBool("jump", true);
         }
 
         if (Input.GetButtonUp("Jump"))
@@ -107,7 +112,12 @@ public class PlayerMove : MonoBehaviour
             {
                 player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
                 isJumping = true;
+                anim.SetBool("jump", true);
             }
+        }
+        if(isJumping && player.velocity.y < 0)
+        {
+            anim.SetBool("fall", true);
         }
     }
 
@@ -117,11 +127,18 @@ public class PlayerMove : MonoBehaviour
         if(direction > 0)
         {
             imagem.flipX = false;
+            anim.SetBool("run", true);          
         }
-        else if (direction < 0)
+        if (direction < 0)
         {
             imagem.flipX =true;
+            anim.SetBool("run",true);          
         }
+        if(direction == 0)
+        {
+            anim.SetBool("run",false);          
+        }
+
     }
 
     void PlayerCoyoteTimer()
@@ -140,7 +157,6 @@ public class PlayerMove : MonoBehaviour
 
     void Reiniciar()
     {
-        //meu index atual
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(cenaAtual);
     }
@@ -202,8 +218,12 @@ public class PlayerMove : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         isGrounded = true;
-
-        
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            anim.SetBool("jump", false);
+            anim.SetBool("fall", false);
+        }
+      
     }
 
     private void OnTriggerExit2D(Collider2D collision)
