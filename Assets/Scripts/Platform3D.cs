@@ -19,6 +19,7 @@ public class Platform3D : MonoBehaviour
     void Update()
     {
         Tilemap spriteRenderer = GetComponent<Tilemap>();
+        TilemapCollider2D collider = GetComponent<TilemapCollider2D>();
 
         vision3d = player.GetComponent<PlayerMove>().GetVision3dColor();
 

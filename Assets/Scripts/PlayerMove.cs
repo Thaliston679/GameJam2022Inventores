@@ -80,7 +80,7 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("jump",true);
         }
 
-        if (Input.GetButtonDown("Jump") && !isGrounded && doubleJump && isJumping && coyoteTimer <= 0)
+        if (Input.GetButtonDown("Jump") && !isGrounded && doubleJump && coyoteTimer <= 0)
         {
             player.velocity = new Vector2(player.velocity.x,0);
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
