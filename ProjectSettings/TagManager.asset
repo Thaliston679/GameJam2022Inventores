@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Itens
   - Enemy
+  - PassarFase2
+  - PassarFase3
+  - PassarFase4
   layers:
   - Default
   - TransparentFX

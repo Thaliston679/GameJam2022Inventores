@@ -131,7 +131,24 @@ public class PlayerMove : MonoBehaviour
 
     void Reiniciar()
     {
-        SceneManager.LoadScene(1);
+        //meu index atual
+        int cenaAtual = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(cenaAtual);
+    }
+
+    void Fase2()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    void Fase3()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    void Fase4()
+    {
+        SceneManager.LoadScene(4);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -142,7 +159,22 @@ public class PlayerMove : MonoBehaviour
             isGrounded = true;
             isJumping = false;
             doubleJump = true;
-        }     
+        }
+
+        if (collision.gameObject.CompareTag("PassarFase2"))
+        {
+            Fase2();
+        }
+
+        if (collision.gameObject.CompareTag("PassarFase3"))
+        {
+            Fase3();
+        }
+
+        if (collision.gameObject.CompareTag("PassarFase4"))
+        {
+            Fase4();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
