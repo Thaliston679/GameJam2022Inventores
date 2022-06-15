@@ -147,7 +147,9 @@ public class PlayerMove : MonoBehaviour
 
             //GameObject atkCamera = Instantiate(cameraAtk, cameraAtkPos.transform);
             GameObject atkCamera = Instantiate(cameraAtk, cameraAtkPos, Quaternion.identity);
-            atkCamera.transform.eulerAngles = new Vector3(0, 0, 180);
+            SpriteRenderer spriteRenderer = atkCamera.gameObject.GetComponent<SpriteRenderer>();
+            spriteRenderer.flipX = true;
+            //atkCamera.transform.eulerAngles = new Vector3(0, 0, 180);
 
             GameObject atkFlash = Instantiate(flashAtk, flashAtkPos, Quaternion.identity);
             atkFlash.transform.eulerAngles = new Vector3(0, 0, 180);
@@ -165,7 +167,9 @@ public class PlayerMove : MonoBehaviour
             Vector3 flashAtkPos = new Vector3(transform.position.x + 0.25f, transform.position.y + 0.26f, transform.position.z + 5);
 
             GameObject atkCamera = Instantiate(cameraAtk, cameraAtkPos, Quaternion.identity);
-            atkCamera.transform.eulerAngles = new Vector3(0, 0, 0);
+            SpriteRenderer spriteRenderer = atkCamera.gameObject.GetComponent<SpriteRenderer>();
+            spriteRenderer.flipX = false;
+            //atkCamera.transform.eulerAngles = new Vector3(0, 0, 0);
 
             GameObject atkFlash = Instantiate(flashAtk, flashAtkPos, Quaternion.identity);
             atkFlash.transform.eulerAngles = new Vector3(0, 0, 0);
