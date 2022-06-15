@@ -19,6 +19,8 @@ public class PlayerMove : MonoBehaviour
     public GameObject cameraAtk;
     public GameObject flashAtk;
 
+    public GameObject effect3D;
+
     private float timerFlash = 0;
 
     private bool doubleJump = false;
@@ -112,10 +114,20 @@ public class PlayerMove : MonoBehaviour
             if(vision3dColor == 1)
             {
                 vision3dColor = 2;
+                Vector3 effect3DPos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+                GameObject effect3dI = Instantiate(effect3D, effect3DPos, Quaternion.identity);
+                SpriteRenderer spriteRenderer = effect3dI.gameObject.GetComponent<SpriteRenderer>();
+                spriteRenderer.color = new Vector4(1, 0.2f, 0.2f, 1);//Vermelho Aparente
+                Destroy(effect3dI, 0.3f);
             }
             else
             {
                 vision3dColor = 1;
+                Vector3 effect3DPos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+                GameObject effect3dI = Instantiate(effect3D, effect3DPos, Quaternion.identity);
+                SpriteRenderer spriteRenderer = effect3dI.gameObject.GetComponent<SpriteRenderer>();
+                spriteRenderer.color = new Vector4(0.2f, 0.4f, 1, 1);//Azul Aparente
+                Destroy(effect3dI, 0.3f);
             }
         }
 
