@@ -68,7 +68,7 @@ public class PlayerMove : MonoBehaviour
 
     void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space) && !isJumping && coyoteTimer > 0)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && coyoteTimer > 0)
         {
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
             isJumping = true;
