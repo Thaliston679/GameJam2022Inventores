@@ -180,7 +180,11 @@ MonoBehaviour:
   player: {fileID: 4686777269981510105}
   moveSpeed: 7
   jumpForce: 16
-  imagem: {fileID: 0}
+  imagem: {fileID: 4686777269981510104}
+  panelMenuPause: {fileID: 0}
+  pauseButton: {fileID: 0}
+  cameraAtk: {fileID: 6841244704055419078, guid: c200e5c132da64f44be2c499b811be43, type: 3}
+  flashAtk: {fileID: 2358764783338488550, guid: 421c50dfc14fedb49b2ebb9007b8b1ed, type: 3}
   vision3dColor: 0
 --- !u!95 &1856090023
 Animator:
