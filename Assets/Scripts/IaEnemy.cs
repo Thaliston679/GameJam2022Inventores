@@ -18,18 +18,12 @@ public class IaEnemy : MonoBehaviour
     private float tempoTiro = 0;
     private bool pode_atirar;
 
+    private float timerLaser = 0;
+
     void Update()
     {
-        if (pode_atirar == true)
-        {
-            pode_atirar = false;
-            Atirar();
-        }
-        else
-        {
-            TemporizadorTiro();
-        }
-
+        TimerLaserAtk();
+        Ataque();
         if (quebrado == false)
         {
             MoveEnemy();
@@ -78,28 +72,36 @@ public class IaEnemy : MonoBehaviour
     public bool GetEnemyDestroyed()
     {
         return quebrado;
-    } 
-    void Atirar()
-    {
-        Disparo();
     }
 
-    void Disparo()
+    void Ataque()
     {
-        Vector3 pontoDsiparo = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
-        GameObject balaDisparada = Instantiate(laser,pontoDsiparo, Quaternion.identity);
-        balaDisparada.GetComponent<Projectile>().DirecaoBala(0.5f);
-        Destroy(balaDisparada, 1.5f);
-    }
-
-    void TemporizadorTiro()
-    {
-        tempoTiro += Time.deltaTime;
-        if(tempoTiro > 1)
+        if (movingRight)
         {
-            pode_atirar = true;
-            tempoTiro = 0;
+            Vector3 pontoDeDisparo = new Vector3(transform.position.x + 0.14f, transform.position.y, transform.position.z);
+            GameObject laserDisparado = Instantiate(laser, pontoDeDisparo, Quaternion.identity);
+            laserDisparado.GetComponent<Projectile>().DirecaoBala(0.08f);
+            laser.transform.localScale = new Vector3(1, 1, 1);  
+            
+            Destroy(laser, 1.5f);
+        }    
+        else
+        {
+            Vector3 pontoDeDisparo = new Vector3(transform.position.x + 0.14f, transform.position.y, transform.position.z);
+            GameObject laserDisparado = Instantiate(laser, pontoDeDisparo, Quaternion.identity);
+            laserDisparado.GetComponent<Projectile>().DirecaoBala(0.08f);
+            laser.transform.localScale = new Vector3(-1, 1, 1);
+
+            Destroy(laserDisparado, 1.5f);
         }
     }
-    
+
+    void TimerLaserAtk()
+    {
+        timerLaser += Time.deltaTime;
+        if (timerLaser > 0.5f)
+        {
+            timerLaser = 0;
+        }
+    }
 }
