@@ -68,14 +68,14 @@ public class PlayerMove : MonoBehaviour
 
     void PlayerJump()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && coyoteTimer > 0)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && !isJumping && coyoteTimer > 0)
         {
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
             isJumping = true;
             anim.SetBool("jump",true);
         }
 
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isGrounded && doubleJump && coyoteTimer <= 0)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && !isGrounded && doubleJump && coyoteTimer <= 0)
         {
             player.velocity = new Vector2(player.velocity.x,0);
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
@@ -83,7 +83,7 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("jump", true);
         }
 
-        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
         {
             PlayerJumpCut();
         }
@@ -248,17 +248,17 @@ public class PlayerMove : MonoBehaviour
 
     void Fase2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     void Fase3()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     void Fase4()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

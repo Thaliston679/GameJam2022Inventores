@@ -4919,6 +4919,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PauseGame
       objectReference: {fileID: 0}
+    - target: {fileID: 7122201134913679806, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 854832433}
+    - target: {fileID: 7122201134913679806, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
 --- !u!1001 &1985486617

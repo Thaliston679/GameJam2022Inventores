@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6810001274949735419, guid: 762ec7e609fd90f4daedba24722f7bbf, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManagerController, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -1280,7 +1280,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!1 &7611810310958451259
 GameObject:
   m_ObjectHideFlags: 0
