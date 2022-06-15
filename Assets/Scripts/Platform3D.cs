@@ -15,11 +15,11 @@ public class Platform3D : MonoBehaviour
         PlayerMove playerMove = player.GetComponent<PlayerMove>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Tilemap spriteRenderer = GetComponent<Tilemap>();
-        TilemapCollider2D collider = GetComponent<TilemapCollider2D>();
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
+        
 
         vision3d = player.GetComponent<PlayerMove>().GetVision3dColor();
 
@@ -29,20 +29,24 @@ public class Platform3D : MonoBehaviour
                 if (vision3d == tilemapColor)
                 {
                     spriteRenderer.color = new Vector4(0.2f, 0.4f, 1, 1);//Azul Aparente
+                    boxCollider2D.enabled = true;
                 }
                 else
                 {
                     spriteRenderer.color = new Vector4(1, 0.2f, 0.2f, 0.2f);//Vermelho Apagado
+                    boxCollider2D.enabled = false;
                 }
                 break;
             case 2:
                 if (vision3d == tilemapColor)
                 {
                     spriteRenderer.color = new Vector4(1, 0.2f, 0.2f, 1);//Vermelho Aparente
+                    boxCollider2D.enabled = true;
                 }
                 else
                 {
                     spriteRenderer.color = new Vector4(0.2f, 0.4f, 1, 0.2f);//Azul Apagado
+                    boxCollider2D.enabled = false;
                 }
                 break;
             default:

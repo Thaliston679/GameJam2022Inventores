@@ -47,6 +47,7 @@ public class PlayerMove : MonoBehaviour
         PlayerJump();
         PlayerMirror();
         PlayerCoyoteTimer();
+        PlayerActions();
     }
 
     
@@ -73,14 +74,14 @@ public class PlayerMove : MonoBehaviour
 
     void PlayerJump()
     {
-        if (Input.GetButtonDown("Jump") && !isJumping && coyoteTimer > 0)
+        if (Input.GetKeyDown(KeyCode.Z) && !isJumping && coyoteTimer > 0)
         {
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
             isJumping = true;
             anim.SetBool("jump",true);
         }
 
-        if (Input.GetButtonDown("Jump") && !isGrounded && doubleJump && coyoteTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.Z) && !isGrounded && doubleJump && coyoteTimer <= 0)
         {
             player.velocity = new Vector2(player.velocity.x,0);
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
@@ -88,18 +89,9 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("jump", true);
         }
 
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetKeyUp(KeyCode.Z))
         {
             PlayerJumpCut();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            vision3dColor = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            vision3dColor = 2;
         }
     }
 
@@ -115,9 +107,29 @@ public class PlayerMove : MonoBehaviour
                 anim.SetBool("jump", true);
             }
         }
-        if(isJumping && player.velocity.y < 0)
+        if(player.velocity.y < 0)
         {
             anim.SetBool("fall", true);
+        }
+    }
+
+    void PlayerActions()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if(vision3dColor == 1)
+            {
+                vision3dColor = 2;
+            }
+            else
+            {
+                vision3dColor = 1;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+
         }
     }
 
