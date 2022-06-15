@@ -23,4 +23,9 @@ public class GameManagerController : MonoBehaviour
             pauseButton.SetActive(true);
         }
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
