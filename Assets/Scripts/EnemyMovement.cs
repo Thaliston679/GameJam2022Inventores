@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private bool movingRight = true;
 
-    public float velPlat = 3f; //Velocidade da plataforma
+    public float velEnemy = 3f;
     public Transform inimigo;
     public Transform moveRight;
     public Transform moveLeft;
@@ -22,14 +22,14 @@ public class EnemyMovement : MonoBehaviour
             movingRight = false;
         }
 
-        if (movingRight) //Move a plataforma para direita
+        if (movingRight)
         {
-            inimigo.transform.position = new Vector2(inimigo.transform.position.x + velPlat * Time.deltaTime, inimigo.transform.position.y);
+            inimigo.transform.position = new Vector2(inimigo.transform.position.x + velEnemy * Time.deltaTime, inimigo.transform.position.y);
             inimigo.transform.localScale = new Vector3(1, 1, 1);
         }
-        else //Move a plataforma para esquerda
+        else
         {
-            inimigo.transform.position = new Vector2(inimigo.transform.position.x - velPlat * Time.deltaTime, inimigo.transform.position.y);
+            inimigo.transform.position = new Vector2(inimigo.transform.position.x - velEnemy * Time.deltaTime, inimigo.transform.position.y);
             inimigo.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
