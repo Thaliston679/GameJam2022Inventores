@@ -68,14 +68,14 @@ public class PlayerMove : MonoBehaviour
 
     void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !isJumping && coyoteTimer > 0)
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space) && !isJumping && coyoteTimer > 0)
         {
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
             isJumping = true;
             anim.SetBool("jump",true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && !isGrounded && doubleJump && coyoteTimer <= 0)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isGrounded && doubleJump && coyoteTimer <= 0)
         {
             player.velocity = new Vector2(player.velocity.x,0);
             player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
@@ -83,7 +83,7 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("jump", true);
         }
 
-        if (Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Space))
         {
             PlayerJumpCut();
         }
@@ -94,12 +94,6 @@ public class PlayerMove : MonoBehaviour
         if(isJumping && player.velocity.y > 0)
         {
             player.velocity = new Vector2(player.velocity.x, player.velocity.y * jumpCut);
-            if (Input.GetButtonDown("Jump") && !isJumping)
-            {
-                player.AddForce(new Vector2(player.velocity.x, jumpForce), ForceMode2D.Impulse);
-                isJumping = true;
-                anim.SetBool("jump", true);
-            }
         }
         if(player.velocity.y < 0)
         {
@@ -109,7 +103,7 @@ public class PlayerMove : MonoBehaviour
 
     void PlayerActions()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Mouse1))
         {
             if(vision3dColor == 1)
             {
@@ -131,7 +125,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && lantern)
+        if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Mouse0)) && lantern)
         {
             PlayerFlash();
         }
