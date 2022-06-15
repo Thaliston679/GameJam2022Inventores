@@ -10,6 +10,7 @@ TagManager:
   - PassarFase2
   - PassarFase3
   - PassarFase4
+  - flashAtk
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Atk
+  - Player
   - 
   - 
   - 

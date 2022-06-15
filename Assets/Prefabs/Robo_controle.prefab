@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8516998271468276983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pontoA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8516998271662035758}
   - component: {fileID: 8516998271662035753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Robo_controle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44a05857322349438dbd21b54ca1db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velPlat: 3
+  velEnemy: 3
   inimigo: {fileID: 8516998271738957642}
   moveRight: {fileID: 8516998271468276983}
   moveLeft: {fileID: 8516998271832475983}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8516998271738957640}
   - component: {fileID: 8516998271738957643}
   - component: {fileID: 8516998271738957647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Robo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8516998271832475983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pontoB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
