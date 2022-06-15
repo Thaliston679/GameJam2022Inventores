@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8516998271468276983}
   m_Layer: 6
-  m_Name: pontoA
+  m_Name: moveRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8516998271468276982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.69, y: -0.99, z: 0}
+  m_LocalPosition: {x: -4.62, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8516998271662035758}
@@ -39,7 +39,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8516998271662035758}
-  - component: {fileID: 8516998271662035753}
   m_Layer: 6
   m_Name: Robo_controle
   m_TagString: Untagged
@@ -64,22 +63,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8516998271662035753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8516998271662035752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f44a05857322349438dbd21b54ca1db3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velEnemy: 3
-  inimigo: {fileID: 8516998271738957642}
-  moveRight: {fileID: 8516998271468276983}
-  moveLeft: {fileID: 8516998271832475983}
 --- !u!1 &8516998271738957637
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,9 +74,9 @@ GameObject:
   - component: {fileID: 8516998271738957642}
   - component: {fileID: 8516998271738957646}
   - component: {fileID: 8516998271738957641}
-  - component: {fileID: 8516998271738957640}
   - component: {fileID: 8516998271738957643}
-  - component: {fileID: 8516998271738957647}
+  - component: {fileID: 1176745635}
+  - component: {fileID: 1176745640}
   m_Layer: 6
   m_Name: Robo
   m_TagString: Enemy
@@ -108,8 +91,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8516998271738957637}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8443832, y: -1.29, z: 434.73547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8516998271662035758}
@@ -185,27 +168,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &8516998271738957640
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8516998271738957637}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 5
 --- !u!61 &8516998271738957643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,7 +194,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.63, y: 0.67}
   m_EdgeRadius: 0
---- !u!114 &8516998271738957647
+--- !u!114 &1176745635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,10 +203,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8516998271738957637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7bc7e6ceee9de488f9d6b11e61ae5f, type: 3}
+  m_Script: {fileID: 11500000, guid: d4e582dc5abafb84a9d29a908d0d6552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 1
+  anim: {fileID: 8516998271738957641}
+--- !u!114 &1176745640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516998271738957637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44a05857322349438dbd21b54ca1db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velEnemy: 3
+  inimigo: {fileID: 8516998271738957642}
+  moveRight: {fileID: 8516998271468276983}
+  moveLeft: {fileID: 8516998271832475983}
 --- !u!1 &8516998271832475982
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8516998271832475983}
   m_Layer: 6
-  m_Name: pontoB
+  m_Name: moveLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8516998271832475982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.28, y: -0.99, z: 0}
+  m_LocalPosition: {x: 2.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8516998271662035758}

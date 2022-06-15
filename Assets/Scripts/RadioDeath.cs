@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RadioDeath : MonoBehaviour
 {
-    private Animator anim;
+    public Animator anim;
     public GameObject radioAtk;
 
     private void Update()

@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368e340827082224980380107c3b3f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 6329493371286868242}
   radioAtk: {fileID: 6329493371315446469}
 --- !u!1 &6329493371315446469
 GameObject:

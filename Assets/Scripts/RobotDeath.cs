@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class RobotDeath : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator anim;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        bool quebrou = GetComponent<EnemyMovement>().GetEnemyDestroyed();
+        if (quebrou)
+        {
+            RadioQuebrado();
+        }
+    }
+    void RadioQuebrado()
+    {
+        anim.SetBool("quebrou", true);
+        BoxCollider2D robotCol = GetComponent<BoxCollider2D>();
+        robotCol.enabled = false;
     }
 }
