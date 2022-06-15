@@ -3541,6 +3541,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469352814, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2069524387}
+    - target: {fileID: 469352814, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
     - target: {fileID: 246591199586297693, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3592,6 +3600,14 @@ PrefabInstance:
     - target: {fileID: 246591200454056378, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829626879447545989, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2069524387}
+    - target: {fileID: 6829626879447545989, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
@@ -3891,3 +3907,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 762ec7e609fd90f4daedba24722f7bbf, type: 3}
+--- !u!114 &2069524387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6810001274949735419, guid: 762ec7e609fd90f4daedba24722f7bbf, type: 3}
+  m_PrefabInstance: {fileID: 2069524386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e720bf9db23789f43abfb6f9f4a2d5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
