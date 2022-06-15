@@ -13,8 +13,8 @@ public class PlayerMove : MonoBehaviour
     public SpriteRenderer imagem;
     private Animator anim;
 
-    //meu index atual
-    
+    public GameObject panelMenuPause;
+    public GameObject pauseButton;
 
     private bool doubleJump = false;
 
@@ -48,6 +48,7 @@ public class PlayerMove : MonoBehaviour
         PlayerMirror();
         PlayerCoyoteTimer();
         PlayerActions();
+
     }
 
     
@@ -55,21 +56,6 @@ public class PlayerMove : MonoBehaviour
     {
         moveInput = Input.GetAxisRaw("Horizontal");
         player.velocity = new Vector2(moveInput * moveSpeed, player.velocity.y);
-
-        /*
-        if(Input.GetAxis("Horizontal") > 0)
-        {
-            player.velocity = new Vector2(moveSpeed, player.velocity.y);
-        }
-        else if(Input.GetAxis("Horizontal") < 0)
-        {
-            player.velocity = new Vector2(-moveSpeed, player.velocity.y);
-        }
-        else
-        {
-            player.velocity = new Vector2(0, player.velocity.y);
-        }
-        */
     }
 
     void PlayerJump()
@@ -129,8 +115,13 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-
+            PlayerFlash();
         }
+    }
+
+    void PlayerFlash()
+    {
+
     }
 
     void PlayerMirror()
@@ -171,6 +162,26 @@ public class PlayerMove : MonoBehaviour
     {
         int cenaAtual = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(cenaAtual);
+    }
+
+    void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                panelMenuPause.SetActive(true);
+                pauseButton.SetActive(false);
+
+            }
+            else if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                panelMenuPause.SetActive(false);
+                pauseButton.SetActive(true);
+            }
+        }
     }
 
     void Fase2()

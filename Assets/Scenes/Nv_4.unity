@@ -17111,11 +17111,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &824237395 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4686777269640143258, guid: 00576ce04715a384184ab187d5928976, type: 3}
-  m_PrefabInstance: {fileID: 1204271114}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1073683498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17236,8 +17231,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4686777269981510111, guid: 00576ce04715a384184ab187d5928976, type: 3}
+      propertyPath: imagem
+      value: 
+      objectReference: {fileID: 1250289992}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00576ce04715a384184ab187d5928976, type: 3}
+--- !u!1 &1250289987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4686777269981510108, guid: 00576ce04715a384184ab187d5928976, type: 3}
+  m_PrefabInstance: {fileID: 1204271114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1250289992 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4686777269981510104, guid: 00576ce04715a384184ab187d5928976, type: 3}
+  m_PrefabInstance: {fileID: 1204271114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1316005189
 GameObject:
   m_ObjectHideFlags: 0
@@ -17334,8 +17343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba02a5e49a09e414981ff2f1257bae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 824237395}
+  target: {fileID: 1250289987}
   smoothSpeed: 3
+  distX: 0
   offset: {x: 0, y: 0, z: -20}
 --- !u!1001 &1806625871
 PrefabInstance:

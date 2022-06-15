@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e720bf9db23789f43abfb6f9f4a2d5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxGO: {fileID: 1360437837473189811, guid: 8a89d62b6be88934c9455e08959818ab, type: 3}
+  hudGO: {fileID: 246591200454056377, guid: 89099fea8cbb65b47bec5a1592cc645d, type: 3}
