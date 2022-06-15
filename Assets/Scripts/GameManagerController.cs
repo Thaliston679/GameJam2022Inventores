@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class GameManagerController : MonoBehaviour
 {
+    public GameObject panelMenuPause;
+    public GameObject pauseButton;
+
     public static void PauseGame()
     {
-        if(Time.timeScale == 0)
-        {
-            Time.timeScale = 1;
-        }
-        else if(Time.timeScale == 1)
+        if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
+            panelMenuPause.SetActive(true);
+            pauseButton.SetActive(false);
+
+        }
+        else if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            panelMenuPause.SetActive(false);
+            pauseButton.SetActive(true);
         }
     }
 }

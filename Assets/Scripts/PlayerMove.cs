@@ -16,6 +16,11 @@ public class PlayerMove : MonoBehaviour
     public GameObject panelMenuPause;
     public GameObject pauseButton;
 
+    public GameObject cameraAtk;
+    public GameObject flashAtk;
+
+    private float timerFlash = 0;
+
     private bool doubleJump = false;
 
     private bool isGrounded = false;
@@ -48,7 +53,8 @@ public class PlayerMove : MonoBehaviour
         PlayerMirror();
         PlayerCoyoteTimer();
         PlayerActions();
-
+        TimerFlashAtk();
+        Pause();
     }
 
     
@@ -113,7 +119,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && lantern)
         {
             PlayerFlash();
         }
@@ -121,7 +127,53 @@ public class PlayerMove : MonoBehaviour
 
     void PlayerFlash()
     {
+        lantern = false;
+        if (imagem.flipX)
+        {
+            Vector3 cameraAtkPos = new Vector3(transform.position.x - 0.14f, transform.position.y + 0.32f, transform.position.z + 2);
+            Vector3 flashAtkPos = new Vector3(transform.position.x - 0.25f, transform.position.y + 0.26f, transform.position.z + 5);
 
+            //GameObject atkCamera = Instantiate(cameraAtk, cameraAtkPos.transform);
+            GameObject atkCamera = Instantiate(cameraAtk, cameraAtkPos, Quaternion.identity);
+            atkCamera.transform.eulerAngles = new Vector3(0, 0, 180);
+
+            GameObject atkFlash = Instantiate(flashAtk, flashAtkPos, Quaternion.identity);
+            atkFlash.transform.eulerAngles = new Vector3(0, 0, 180);
+
+            atkCamera.transform.parent = this.transform;
+            atkFlash.transform.parent = this.transform;
+
+            Destroy(atkFlash, 0.1f);
+            Destroy(atkCamera, 0.15f);
+
+        }
+        else
+        {
+            Vector3 cameraAtkPos = new Vector3(transform.position.x + 0.14f, transform.position.y + 0.32f, transform.position.z + 2);
+            Vector3 flashAtkPos = new Vector3(transform.position.x + 0.25f, transform.position.y + 0.26f, transform.position.z + 5);
+
+            GameObject atkCamera = Instantiate(cameraAtk, cameraAtkPos, Quaternion.identity);
+            atkCamera.transform.eulerAngles = new Vector3(0, 0, 0);
+
+            GameObject atkFlash = Instantiate(flashAtk, flashAtkPos, Quaternion.identity);
+            atkFlash.transform.eulerAngles = new Vector3(0, 0, 0);
+
+            atkCamera.transform.parent = this.transform;
+            atkFlash.transform.parent = this.transform;
+
+            Destroy(atkFlash, 0.1f);
+            Destroy(atkCamera, 0.15f);
+        }
+    }
+
+    void TimerFlashAtk()
+    {
+        timerFlash += Time.deltaTime;
+        if (timerFlash > 0.5f)
+        {
+            lantern = true;
+            timerFlash = 0;
+        }
     }
 
     void PlayerMirror()
