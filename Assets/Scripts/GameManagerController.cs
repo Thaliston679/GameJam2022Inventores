@@ -7,7 +7,7 @@ public class GameManagerController : MonoBehaviour
     public GameObject panelMenuPause;
     public GameObject pauseButton;
 
-    public static void PauseGame()
+    public void PauseGame()
     {
         if (Time.timeScale == 1)
         {
