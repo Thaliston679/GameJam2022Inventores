@@ -4541,15 +4541,15 @@ Transform:
   - {fileID: 1197974238}
   - {fileID: 1400061215}
   - {fileID: 1069939695}
+  - {fileID: 770494093}
   - {fileID: 1736086034}
+  - {fileID: 1250413781}
   - {fileID: 1809766250}
   - {fileID: 971986500}
-  - {fileID: 1250413781}
   - {fileID: 1828076664}
-  - {fileID: 1314241611}
   - {fileID: 1483025269}
+  - {fileID: 1314241611}
   - {fileID: 306191225}
-  - {fileID: 770494093}
   - {fileID: 1374771172}
   - {fileID: 825672080}
   - {fileID: 1216057323}
@@ -5949,7 +5949,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 49.668, y: 27.944}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791513793
 MonoBehaviour:
@@ -6166,11 +6166,11 @@ PrefabInstance:
     - target: {fileID: 4686777269981510111, guid: 00576ce04715a384184ab187d5928976, type: 3}
       propertyPath: pauseButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1509069785}
     - target: {fileID: 4686777269981510111, guid: 00576ce04715a384184ab187d5928976, type: 3}
       propertyPath: panelMenuPause
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 388886785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00576ce04715a384184ab187d5928976, type: 3}
 --- !u!1001 &1961084349
@@ -6265,7 +6265,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.987, y: 146.728}
-  m_SizeDelta: {x: 755.184, y: 321.56}
+  m_SizeDelta: {x: 755.184, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974460636
 MonoBehaviour:
@@ -6294,7 +6294,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 60
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
